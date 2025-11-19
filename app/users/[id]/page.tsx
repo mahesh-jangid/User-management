@@ -54,7 +54,7 @@ export default function UserDetailPage() {
       </Link>
 
       <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-4 sm:p-8">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mb-6 sm:mb-8">
+        <div className="flex flex-col rounded-xl sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mb-6 sm:mb-8">
           <div className="flex items-center justify-center w-20 h-20 bg-blue-600 text-white rounded-full font-bold text-2xl flex-shrink-0">
             {getInitials(user.name)}
           </div>
