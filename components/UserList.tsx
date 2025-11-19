@@ -163,9 +163,9 @@ export default function UserList() {
   }
 
   return (
-    <div className="space-y-6 bg-white dark:bg-slate-950">
+    <div className="space-y-6 bg-white dark:bg-slate-950 z-50">
       {/* Header */}
-      <div className="sticky top-17 z-20 bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 py-3 px-3 sm:px-0 flex justify-between items-center gap-2">
+      <div className="sticky top-16 z-20 bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 py-3 px-3 sm:px-0 flex justify-between items-center gap-2">
         <h2 className="text-xl sm:text-3xl font-bold text-gray-900 dark:text-slate-100 truncate">Users</h2>
         <button
           onClick={() => {
