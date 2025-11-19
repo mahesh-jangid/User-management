@@ -45,7 +45,7 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-30 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm border-b border-gray-200 dark:border-slate-700 shadow-md transition-colors">
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-5">
         <div className="flex justify-between items-center h-16 gap-3">
           <div className="flex items-center gap-2 sm:gap-3 min-w-0">
             <h1 className="text-lg sm:text-2xl font-bold text-blue-600 dark:text-blue-400 truncate">
@@ -79,7 +79,7 @@ export default function Navbar() {
               <Switch.Root
                 checked={darkMode}
                 onCheckedChange={toggleDarkMode}
-                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors cursor-pointer ${
                   darkMode ? 'bg-blue-600' : 'bg-gray-300'
                 } focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2`}
               >

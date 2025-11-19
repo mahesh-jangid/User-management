@@ -56,10 +56,6 @@ html.dark nav p {
 }
 
 /* ============ CONTAINER STYLING ============ */
-html.dark div {
-  color: inherit !important;
-}
-
 html.dark h1,
 html.dark h2,
 html.dark h3,
@@ -67,6 +63,15 @@ html.dark h4,
 html.dark h5,
 html.dark h6 {
   color: #e2e8f0 !important;
+}
+
+/* Ensure paragraphs and labels are visible in dark mode */
+html.dark p {
+  color: #e2e8f0 !important;
+}
+
+html.dark label {
+  color: #d1d5db !important;
 }
 
 /* ============ TABLE STYLING ============ */
@@ -143,6 +148,26 @@ html.dark [class*="border"] {
 }
 
 /* ============ SCROLLBAR ============ */
+/* Light mode scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Dark mode scrollbar */
 html.dark ::-webkit-scrollbar {
   width: 8px;
   height: 8px;

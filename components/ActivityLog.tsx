@@ -68,7 +68,7 @@ export default function ActivityLog() {
         {activityLog.length > 0 && (
           <button
             onClick={clearActivityLog}
-            className="text-xs sm:text-sm px-2 sm:px-3 py-1 text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-slate-100 transition-colors whitespace-nowrap"
+            className="text-xs sm:text-sm px-2 sm:px-3 py-1 text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-slate-100 transition-colors whitespace-nowrap cursor-pointer"
           >
             Clear
           </button>

@@ -20,7 +20,7 @@ export default function UserDetailPage() {
   if (isLoading) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-8">
-        <div className="text-center">Loading...</div>
+        <div className="text-center text-gray-900 dark:text-white">Loading...</div>
       </div>
     );
   }
@@ -28,8 +28,8 @@ export default function UserDetailPage() {
   if (isError || !user) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-8">
-        <div className="text-center text-red-600">User not found</div>
-        <Link href="/" className="text-blue-600 hover:underline">
+        <div className="text-center text-red-600 dark:text-red-400">User not found</div>
+        <Link href="/" className="text-blue-600 dark:text-blue-400 hover:underline">
           Back to Users
         </Link>
       </div>
@@ -62,7 +62,7 @@ export default function UserDetailPage() {
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white break-words">
               {user.name}
             </h1>
-            <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base break-words">{user.company?.name}</p>
+            <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base break-words">{user.company?.name}</p>
           </div>
         </div>
 
@@ -74,19 +74,19 @@ export default function UserDetailPage() {
             </h2>
             <div className="space-y-3 sm:space-y-4">
               <div>
-                <label className="block text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">
+                <label className="block text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">
                   Email
                 </label>
                 <p className="text-gray-900 dark:text-white break-all text-sm sm:text-base">{user.email}</p>
               </div>
               <div>
-                <label className="block text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">
+                <label className="block text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">
                   Phone
                 </label>
                 <p className="text-gray-900 dark:text-white text-sm sm:text-base">{user.phone}</p>
               </div>
               <div>
-                <label className="block text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">
+                <label className="block text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">
                   Website
                 </label>
                 <p className="text-gray-900 dark:text-white break-all text-sm sm:text-base">
@@ -103,7 +103,7 @@ export default function UserDetailPage() {
             </h2>
             <div className="space-y-3 sm:space-y-4">
               <div>
-                <label className="block text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">
+                <label className="block text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">
                   Street
                 </label>
                 <p className="text-gray-900 dark:text-white break-words text-sm sm:text-base">
@@ -111,7 +111,7 @@ export default function UserDetailPage() {
                 </p>
               </div>
               <div>
-                <label className="block text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">
+                <label className="block text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">
                   City
                 </label>
                 <p className="text-gray-900 dark:text-white text-sm sm:text-base">
@@ -119,7 +119,7 @@ export default function UserDetailPage() {
                 </p>
               </div>
               <div>
-                <label className="block text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">
+                <label className="block text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">
                   Zip Code
                 </label>
                 <p className="text-gray-900 dark:text-white text-sm sm:text-base">
@@ -138,7 +138,7 @@ export default function UserDetailPage() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               <div>
-                <label className="block text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">
+                <label className="block text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">
                   Company Name
                 </label>
                 <p className="text-gray-900 dark:text-white break-words text-sm sm:text-base">
@@ -146,7 +146,7 @@ export default function UserDetailPage() {
                 </p>
               </div>
               <div>
-                <label className="block text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">
+                <label className="block text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">
                   Catch Phrase
                 </label>
                 <p className="text-gray-900 dark:text-white break-words text-sm sm:text-base">
@@ -154,7 +154,7 @@ export default function UserDetailPage() {
                 </p>
               </div>
               <div>
-                <label className="block text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">
+                <label className="block text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">
                   Business
                 </label>
                 <p className="text-gray-900 dark:text-white break-words text-sm sm:text-base">

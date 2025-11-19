@@ -24,6 +24,8 @@ export default function UserFormModal({
     company: '',
   });
 
+  const [phoneError, setPhoneError] = useState('');
+
   const addActivityLog = useStore((state) => state.addActivityLog);
 
   useEffect(() => {
@@ -100,15 +102,39 @@ export default function UserFormModal({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate phone before submission
+    if (formData.phone.length !== 10) {
+      setPhoneError('Phone number must be exactly 10 digits');
+      return;
+    }
+    
     mutation.mutate(formData);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    
+    if (name === 'phone') {
+      // Only allow digits
+      const digitsOnly = value.replace(/\D/g, '');
+      setFormData((prev) => ({
+        ...prev,
+        [name]: digitsOnly,
+      }));
+      
+      // Validate phone length
+      if (digitsOnly.length > 0 && digitsOnly.length !== 10) {
+        setPhoneError('Phone number must be exactly 10 digits');
+      } else {
+        setPhoneError('');
+      }
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
   };
 
   return (
@@ -158,9 +184,18 @@ export default function UserFormModal({
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
+                placeholder="10-digit phone number"
+                maxLength={10}
                 required
-                className="w-full px-3 py-2 text-sm sm:text-base border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className={`w-full px-3 py-2 text-sm sm:text-base border rounded-lg focus:outline-none focus:ring-2 dark:bg-gray-800 dark:text-white transition-colors ${
+                  phoneError
+                    ? 'border-red-500 focus:ring-red-500 dark:border-red-500'
+                    : 'border-gray-300 dark:border-gray-600 focus:ring-blue-500'
+                }`}
               />
+              {phoneError && (
+                <p className="mt-1 text-sm text-red-600 dark:text-red-400">{phoneError}</p>
+              )}
             </div>
 
             <div>
@@ -188,7 +223,7 @@ export default function UserFormModal({
               </Dialog.Close>
               <button
                 type="submit"
-                disabled={mutation.isPending}
+                disabled={mutation.isPending || !!phoneError || formData.phone.length !== 10}
                 className="px-3 sm:px-4 py-2 text-sm sm:text-base bg-blue-600 hover:bg-blue-700 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 {mutation.isPending ? 'Saving...' : 'Save'}
