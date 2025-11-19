@@ -2,7 +2,8 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
+  color-scheme: light;
 }
 
 @theme inline {
@@ -12,15 +13,317 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: #ffffff !important;
+  color: #000000 !important;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ============ DARK MODE STYLES ============ */
+html.dark {
+  color-scheme: dark !important;
+  background-color: #0f172a !important;
+  --background: #0f172a !important;
+  --foreground: #f1f5f9 !important;
+}
+
+html.dark body {
+  background-color: #0f172a !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark main {
+  background-color: #0f172a !important;
+  color: #e2e8f0 !important;
+}
+
+/* ============ NAVBAR ============ */
+html.dark nav {
+  background-color: rgba(15, 23, 42, 0.95) !important;
+  border-color: #334155 !important;
+}
+
+html.dark nav h1 {
+  color: #60a5fa !important;
+}
+
+html.dark nav p {
+  color: #e2e8f0 !important;
+}
+
+/* ============ CONTAINER STYLING ============ */
+html.dark div {
+  color: inherit !important;
+}
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+  color: #e2e8f0 !important;
+}
+
+/* ============ TABLE STYLING ============ */
+html.dark table {
+  background-color: #1e293b !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark thead {
+  background-color: #0f172a !important;
+}
+
+html.dark th {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+  color: #cbd5e1 !important;
+  font-weight: 600;
+}
+
+html.dark td {
+  border-color: #334155 !important;
+  color: #cbd5e1 !important;
+}
+
+html.dark tbody tr:hover {
+  background-color: #334155 !important;
+}
+
+/* ============ FORM INPUTS ============ */
+html.dark input,
+html.dark textarea,
+html.dark select {
+  background-color: #1e293b !important;
+  color: #e2e8f0 !important;
+  border-color: #475569 !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+html.dark input:focus,
+html.dark textarea:focus,
+html.dark select:focus {
+  border-color: #60a5fa !important;
+  outline: none;
+}
+
+/* ============ BUTTONS ============ */
+html.dark button {
+  color: inherit !important;
+  transition: all 0.2s ease;
+}
+
+html.dark button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============ LINKS ============ */
+html.dark a {
+  color: #60a5fa !important;
+}
+
+html.dark a:hover {
+  color: #93c5fd !important;
+}
+
+/* ============ BORDERS & DIVIDERS ============ */
+html.dark border,
+html.dark [class*="border"] {
+  border-color: #334155 !important;
+}
+
+/* ============ SCROLLBAR ============ */
+html.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* ============ USERLIST DARK MODE FIXES ============ */
+@layer components {
+  .dark-filter-bg {
+    @apply bg-white dark:bg-slate-800;
+  }
+}
+
+/* Target all divs with space-y-6 class in dark mode */
+html.dark [class~="space-y-6"] {
+  background-color: #0f172a !important;
+}
+
+/* Target all sticky divs in dark mode and make them explicitly dark */
+html.dark [class~="sticky"] {
+  background-color: #1e293b !important;
+}
+
+/* ActivityLog container fix */
+html.dark div[class*="rounded-lg"][class*="shadow-lg"] {
+  background-color: #1e293b !important;
+}
+
+/* Force dark background on all divs that contain "w-full" in dark mode */
+html.dark div[class*="w-full"] {
+  background-color: transparent !important;
+}
+
+/* Override bg-white on all divs in dark mode */
+html.dark div[class*="bg-white"] {
+  background-color: #0f172a !important;
+}
+
+/* Override all other light backgrounds */
+html.dark div[class*="bg-gray-50"] {
+  background-color: transparent !important;
+}
+
+html.dark div[class*="bg-gray-100"] {
+  background-color: transparent !important;
+}
+
+/* Pagination buttons styling in dark mode ONLY */
+html.dark .pagination-btn {
+  background-color: #475569 !important;
+  color: #ffffff !important;
+  border-color: #334155 !important;
+}
+
+html.dark .pagination-btn[class*="bg-blue"] {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
+}
+
+html.dark .pagination-btn[class*="bg-blue"]:hover {
+  background-color: #3b82f6 !important;
+}
+
+html.dark .pagination-btn:hover:not(:disabled):not([class*="bg-blue"]) {
+  background-color: #64748b !important;
+}
+
+html.dark .pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Preserve action label colors - they have explicit dark: classes */
+html.dark div[class*="bg-green-500"] {
+  background-color: #22c55e !important;
+  color: #ffffff !important;
+}
+
+html.dark div[class*="bg-red-500"] {
+  background-color: #ef4444 !important;
+  color: #ffffff !important;
+}
+
+html.dark div[class*="bg-blue-500"] {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
+}
+
+html.dark div[class*="bg-gray-500"] {
+  background-color: #6b7280 !important;
+  color: #ffffff !important;
+}
+
+/* ActivityLog component specific styling */
+html.dark .activity-log-container {
+  background-color: #1e293b !important;
+  border-color: #475569 !important;
+}
+
+html.dark .activity-log-container h2 {
+  color: #ffffff !important;
+}
+
+html.dark .activity-log-container button {
+  color: #cbd5e1 !important;
+  background-color: transparent !important;
+}
+
+html.dark .activity-log-container p {
+  color: #ffffff !important;
+}
+
+/* Specific rule for activity log - target by shadow class */
+html.dark .shadow-lg {
+  background-color: #1e293b !important;
+  border-color: #475569 !important;
+}
+
+/* Activity log main container */
+html.dark div[class*="w-full"][class*="shadow-lg"] {
+  background-color: #1e293b !important;
+}
+
+/* Force all rounded divs with shadow in dark mode */
+html.dark div[class*="rounded-lg"][class*="shadow"] {
+  background-color: #1e293b !important;
+}
+
+/* ActivityLog h2 text color */
+html.dark .shadow-lg h2 {
+  color: #ffffff !important;
+}
+
+/* ActivityLog Clear button */
+html.dark .shadow-lg button {
+  color: #cbd5e1 !important;
+}
+
+/* Sidebar container */
+html.dark div[class*="lg:col-span-1"] {
+  background-color: transparent !important;
+}
+
+/* Activity log cards - target by class */
+html.dark .activity-card {
+  background-color: #475569 !important;
+  border-color: #334155 !important;
+}
+
+html.dark .activity-card p {
+  color: #ffffff !important;
+}
+
+html.dark .activity-card .text-xs {
+  color: #cbd5e1 !important;
+}
+
+/* Activity log cards - target by flex and gap classes */
+html.dark div[class*="flex"][class*="gap-4"][class*="p-4"] {
+  background-color: #475569 !important;
+  color: #ffffff !important;
+}
+
+/* Activity log text styling */
+html.dark div[class*="flex"][class*="gap-4"][class*="p-4"] p {
+  color: #ffffff !important;
+}
+
+html.dark div[class*="flex"][class*="gap-4"][class*="p-4"] .text-xs {
+  color: #cbd5e1 !important;
+}
+
