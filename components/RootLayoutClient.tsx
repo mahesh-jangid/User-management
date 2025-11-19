@@ -46,7 +46,7 @@ export default function RootLayoutClient({
     <QueryClientProvider client={queryClient}>
       <div className="bg-white dark:bg-slate-950 min-h-screen transition-colors">
         <Navbar />
-        <main className="min-h-screen pt-4 bg-white dark:bg-slate-950 text-black dark:text-slate-100 transition-colors">
+        <main className="min-h-[85vh] pt-4 bg-white dark:bg-slate-950 text-black dark:text-slate-100 transition-colors">
           {children}
         </main>
       </div>
