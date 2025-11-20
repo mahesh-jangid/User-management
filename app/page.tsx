@@ -13,7 +13,7 @@ export default function Home() {
         </div>
 
         {/* Sidebar - Activity log */}
-        <div className="lg:col-span-1 bg-white dark:bg-slate-950">
+        <div className="lg:col-span-1 bg-white dark:bg-slate-950 min-h-[40vh]">
           <div className="sticky top-22 bg-white dark:bg-slate-950">
             <ActivityLog />
           </div>

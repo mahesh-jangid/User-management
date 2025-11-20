@@ -51,7 +51,7 @@ export default function ActivityLog() {
   };
 
   return (
-    <div className="activity-log-container w-full bg-white dark:bg-slate-900 rounded-lg shadow-lg p-4 sm:p-6 border border-gray-200 dark:border-slate-700" data-component="activity-log">
+    <div className="activity-log-container w-full bg-white dark:bg-slate-900 rounded-lg shadow-lg p-4 sm:p-6 border border-gray-200 dark:border-slate-700 max-h-[83vh]" data-component="activity-log">
       <style>{`
         .scrollbar-hide::-webkit-scrollbar {
           display: none;

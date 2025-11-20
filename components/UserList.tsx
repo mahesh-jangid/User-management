@@ -47,7 +47,7 @@ export default function UserList() {
   const [editingUser, setEditingUser] = useState<User | null>(null);
   const [deleteUserId, setDeleteUserId] = useState<number | null>(null);
 
-  const itemsPerPage = 3; // show 3 items per page
+  const itemsPerPage =2; // show 3 items per page
   const queryClient = useQueryClient();
   // Fetch a single page; `keepPreviousData` keeps the previous page in cache when switching
   const queryResult = useQuery({
@@ -128,7 +128,7 @@ export default function UserList() {
     return (
       <div className="space-y-6 bg-white dark:bg-slate-950">
         {/* Header - Show immediately */}
-        <div className="sticky top-17 z-20 bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 py-3 flex justify-between items-center">
+        <div className="sticky top-17 z-20 bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 py3 flex justify-between items-center">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-slate-100">Users</h2>
           <button
             disabled
@@ -139,7 +139,7 @@ export default function UserList() {
         </div>
 
         {/* Filters - Show immediately */}
-        <div className="sticky top-[7.5rem] z-10 bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 p-4 rounded-lg shadow flex gap-3 flex-wrap">
+        <div className="sticky top-[7.3rem] z-10 bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 p-4 rounded-lg shadow flex gap-3 flex-wrap">
           <input
             type="text"
             placeholder="Search by name..."
@@ -165,7 +165,7 @@ export default function UserList() {
   return (
     <div className="space-y-6 bg-white dark:bg-slate-950 z-50">
       {/* Header */}
-      <div className="sticky top-16 z-20 bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 py-3 px-3 sm:px-0 flex justify-between items-center gap-2">
+      <div className="sticky top-16 z-20 bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 py-2 px-3 sm:px-0 flex justify-between items-center gap-2">
         <h2 className="text-xl sm:text-3xl font-bold text-gray-900 dark:text-slate-100 truncate">Users</h2>
         <button
           onClick={() => {
@@ -179,7 +179,7 @@ export default function UserList() {
       </div>
 
       {/* Filters */}
-      <div className="sticky top-[7.5rem] z-10 bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 p-3 sm:p-4 rounded-lg shadow flex gap-2 sm:gap-3 flex-wrap">
+      <div className="sticky top-[7.3rem] z-10 bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 p-3 sm:p-4 rounded-lg shadow flex gap-2 sm:gap-3 flex-wrap">
         <input
           type="text"
           placeholder="Search by name..."
